@@ -3,20 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	const mileInKM = 1.60934
-	var miles = 55.3
-	var kilometres = miles * mileInKM
-	fmt.Printf("%.2f miles = %.2f kilometres\n", miles, kilometres)
+	var miles float64 = 10
+	var fahrenheit float64 = 98.6
 
-	var fahrenheit = 99.9
-	var celsius = (fahrenheit - 32.0) * 5 / 9
-	fmt.Printf("%.2f°F = %.2f°C\n", fahrenheit, celsius)
+	kilometers := miles * 1.60934
+	celsius := (fahrenheit - 32) * 5 / 9
 
-	const marathonInKM = 42.195
-	var marathonInMiles = 0.0 // TODO: calculate using mileInKM!
-	fmt.Printf("a marathon is %.2f kilometres = %.2f miles long\n", marathonInKM, marathonInMiles)
+	fmt.Printf("%.2f Meilen sind %.2f Kilometer\n", miles, kilometers)
+	fmt.Printf("%.2f Fahrenheit sind %.2f Celsius\n", fahrenheit, celsius)
 
-	var boilingWaterCelsius = 100.0
-	var boilingWaterFahrenheit = 0.0 // TODO: calculate using formula above!
-	fmt.Printf("water boils at %.2f°C = %.2f°F\n", boilingWaterCelsius, boilingWaterFahrenheit)
+	var km float64 = 16.0934
+	var c float64 = 37
+
+	milesFromKm := km / 1.60934
+	fahrenheitFromC := c*9/5 + 32
+
+	fmt.Printf("%.2f Kilometer sind %.2f Meilen\n", km, milesFromKm)
+	fmt.Printf("%.2f Celsius sind %.2f Fahrenheit\n", c, fahrenheitFromC)
 }
