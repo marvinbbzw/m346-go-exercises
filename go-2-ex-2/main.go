@@ -3,13 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	var fibs = []int{1, 1, 0, 0, 0}
+	fibs := []int{1, 1}
 
-	fibs[2] = fibs[0] + fibs[1]
-	// TODO: correct up to index 4 using direct element access
+	for i := 2; i < 5; i++ {
+		fibs = append(fibs, fibs[i-1]+fibs[i-2])
+	}
 
-	fibs = append(fibs, 0) // TODO: replace 0 with the next Fibonacci number
-	// TODO: compute three more Fibonacci numbers and append them
+	for i := 5; i < 9; i++ {
+		fibs = append(fibs, fibs[i-1]+fibs[i-2])
+	}
 
-	fmt.Println(fibs) // expected output: [1 1 2 3 5 8 13 21 34]
+	fmt.Println("Fibonacci sequenz:", fibs)
 }
